@@ -36,7 +36,7 @@ if [ "$brc_version" = "latest" ]; then
 fi
 
 echo "Downloading now Bedrock Connect JAR"
-curl  https://github.com/Pugmatt/BedrockConnect/releases/download/${BRC_VERSION}/BedrockConnect-1.0-SNAPSHOT.jar -o /docker/brc/BedrockConnect-1.0-SNAPSHOT.jar
+easy-add --var version=$BRC_VERSION --from https://github.com/Pugmatt/BedrockConnect/releases/download/{{.version}}/BedrockConnect-setup.zip --file BedrockConnect-1.0-SNAPSHOT.jar -to /docker/brc
 chmod 664 /docker/brc/BedrockConnect-1.0-SNAPSHOT.jar
 
 echo "Bedrock Connect Version: ${BRC_VERSION}"
